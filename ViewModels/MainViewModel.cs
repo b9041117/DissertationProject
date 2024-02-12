@@ -1,16 +1,16 @@
 ﻿using DevelopmentProject.ViewModels.Graphs;
 using DevelopmentProject.ViewModels.RiverModel;
 using DevelopmentProject.Views.RiverModelView;
+using ReactiveUI;
+using ScottPlot.Avalonia;
 
 namespace DevelopmentProject.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
-
     public RiverViewModel riverViewModel{ get; set; }
     public GraphsViewModel graphsViewModel { get; set; }
-
+   
     public MainViewModel()
     {
         riverViewModel = new RiverViewModel();

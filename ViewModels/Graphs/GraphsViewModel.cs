@@ -10,9 +10,12 @@ namespace DevelopmentProject.ViewModels.Graphs
     {
         public GraphsViewModel()
         {
-
+            riverSpeedGraphViewModel = new RiverSpeedGraphViewModel();
+            riverDepthGraphViewModel = new RiverDepthGraphViewModel();
         }
 
+        public RiverSpeedGraphViewModel riverSpeedGraphViewModel { get; set; }
 
+        public RiverDepthGraphViewModel riverDepthGraphViewModel { get; set; }
     }
 }

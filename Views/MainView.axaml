@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:DevelopmentProject.ViewModels"
-             xmlns:graphsViews="clr-namespace:DevelopmentProject.Views.Graphs_Views"
+             xmlns:graphsViews="clr-namespace:DevelopmentProject.Views.GraphsViews"
+             xmlns:rs="clr-namespace:DevelopmentProject.Views.Graphs_Views"
              xmlns:riverView="clr-namespace:DevelopmentProject.Views.RiverModelView"
+             xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DevelopmentProject.Views.MainView"
              x:DataType="vm:MainViewModel"
@@ -24,8 +26,7 @@
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
-
-	  <graphsViews:RiverSpeedGraphView DataContext="{Binding graphsViewModel}" Grid.Row="0" Grid.Column="0"></graphsViews:RiverSpeedGraphView>
+      <graphsViews:GraphsView DataContext="{Binding graphsViewModel}" Grid.Row="0" Grid.Column="1"></graphsViews:GraphsView>
 	  <riverView:RiverModelView DataContext="{Binding riverViewModel}" Grid.Row="1" Grid.Column="0"></riverView:RiverModelView>
   </Grid>
 

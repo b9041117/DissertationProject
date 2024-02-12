@@ -13,5 +13,6 @@
     <StackPanel
         Margin="10">
 		<Slider Value="{Binding SelectedRiverSpeed, Mode=TwoWay}"/>
+        <TextBlock Text="{Binding SelectedRiverSpeed, Mode=OneWay}"/>
 		</StackPanel>
 </UserControl>

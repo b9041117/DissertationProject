@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using ScottPlot.Avalonia;
 
 namespace DevelopmentProject.Views.Graphs_Views
 {
@@ -8,5 +9,6 @@ namespace DevelopmentProject.Views.Graphs_Views
         {
             InitializeComponent();
         }
+
     }
 }
