@@ -23,6 +23,8 @@ namespace DevelopmentProject.ViewModels.Graphs
         //Create GraphItem and custom graph handler to allow many ViewModels
         //to allow viewModels to send data to graphs from F# Model layer
 
+        public int hello = 10;
+
         public AvaPlot RiverSpeedPlot { get; set; }
 
         public void CreateNewGraph()

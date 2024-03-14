@@ -26,4 +26,8 @@
   <ItemGroup>
     <Folder Include="Tests\ViewModelTests\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\F#Library\FSharpLibrary.fsproj" />
+  </ItemGroup>
 </Project>

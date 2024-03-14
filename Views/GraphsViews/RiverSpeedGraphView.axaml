@@ -11,7 +11,7 @@
         <vm:RiverSpeedGraphViewModel/>
     </Design.DataContext>
     <Grid>
-        <ScottPlot:AvaPlot Name="RSPlot" DataContext="{Binding RiverSpeedPlot}"/>
+        <ScottPlot:AvaPlot Name="RSPlot"/>
     </Grid>
 
 </UserControl>

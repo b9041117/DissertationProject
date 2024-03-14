@@ -1,6 +1,7 @@
 ﻿using DevelopmentProject.ViewModels.Graphs;
 using DevelopmentProject.ViewModels.RiverModel;
 using DevelopmentProject.Views.RiverModelView;
+using F_Library;
 using ReactiveUI;
 using ScottPlot.Avalonia;
 
