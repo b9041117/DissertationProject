@@ -19,7 +19,7 @@ namespace DevelopmentProject.Views.Graphs_Views
 
             for (int i = 0; i < dataX.Length; i++)
             {
-                dataX[i] = f.math((int)dataX[i]);
+                double val = func.deriv(2.0);
             }
 
             avaPlot1.Refresh();
