@@ -4,33 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 using DevelopmentProject.ViewModels.Interfaces;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.SkiaSharpView.VisualElements;
 using ReactiveUI;
+using SkiaSharp;
 
 namespace DevelopmentProject.ViewModels.RiverModel
 {
-    public class RiverViewModel : ViewModelBase, IRiverViewModel 
+    public class RiverViewModel : ViewModelBase 
     {
-        public ICommand riverSpeedCommand { get; }
+
         public RiverViewModel()
         {
-            _selectedRiverSpeed = 0;
-            _selectedRiverDepth = 50;
-        }
 
-        private int _selectedRiverSpeed;
-        private int _selectedRiverDepth;
-
-        public int SelectedRiverSpeed
-        {
-            get => _selectedRiverSpeed;
-            set => this.RaiseAndSetIfChanged(ref _selectedRiverSpeed, value);
-        }
-
-        public int SelectedRiverDepth
-        {
-            get => _selectedRiverDepth;
-            set => this.RaiseAndSetIfChanged(ref _selectedRiverDepth, value);
         }
     }
 }

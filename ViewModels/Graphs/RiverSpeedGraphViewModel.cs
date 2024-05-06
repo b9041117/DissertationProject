@@ -1,40 +1,124 @@
-﻿using Avalonia.Media;
+﻿using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.SkiaSharpView.VisualElements;
 using ReactiveUI;
-using ScottPlot.Avalonia;
+using SkiaSharp;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
+using F_Library;
+using DynamicData;
 
 namespace DevelopmentProject.ViewModels.Graphs
 {
     public class RiverSpeedGraphViewModel : ViewModelBase
     {
+
+        private ICommand _getRiverDepth;
+        public ICommand GetRiverDepth => _getRiverDepth ??= new RelayCommand(ChangeRiverDepth);
+
+        public ObservableCollection<double> ValueCollection;
+
         public RiverSpeedGraphViewModel()
         {
-            RiverSpeedPlot = new AvaPlot();
-            CreateNewGraph();
+            ValueCollection = new ObservableCollection<double>();
+
+
+
+            RiverSpeedPlot = new LineSeries<double>
+            {
+                Values = ValueCollection,
+                Fill = null,
+                 
+            };
+
+            Series = new ISeries[] 
+            {
+                RiverSpeedPlot
+            };
         }
 
-        //private AvaPlot _riverSpeedPlot;
 
-        //public AvaPlot RiverSpeedPlot
-        //{
-        //    get => _riverSpeedPlot;
-        //    set => this.RaiseAndSetIfChanged(ref _riverSpeedPlot, value);
-        //}
+        private LineSeries<double> _riverSpeedPlot;
 
-        //Create GraphItem and custom graph handler to allow many ViewModels
-        //to allow viewModels to send data to graphs from F# Model layer
-
-        public int hello = 10;
-
-        public AvaPlot RiverSpeedPlot { get; set; }
-
-        public void CreateNewGraph()
+        public LineSeries<double> RiverSpeedPlot
         {
-            double[] dataX = { 1, 2, 3, 4, 5 };
-            double[] dataY = { 1, 4, 9, 16, 25 };
+            get => _riverSpeedPlot;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _riverSpeedPlot, value);
+            }
+        }
 
-            //Scatter Not as Per formant as Signal Plot for Larger Data Sets
-            RiverSpeedPlot.Plot.Add.Scatter(dataX, dataY);
-            //RiverSpeedPlot.Render();
+        public ISeries[] Series { get; set; }
+
+        public Axis[] XAxes { get; set; } =
+        {
+            new Axis
+            {
+                Name = "River Depth in cm",
+                // Use the labels property for named or static labels 
+                //Labels = new string[] { "Sergio", "Lando", "Lewis" },
+                //LabelsRotation = 15,
+            }
+        };
+
+        public Axis[] YAxes { get; set; } =
+        {
+            new Axis
+            {
+                Name = "River Speed in m/s",
+                NamePadding = new LiveChartsCore.Drawing.Padding(0, 15),
+            }
+        };
+
+        public LabelVisual Title { get; set; } = new LabelVisual
+        {
+            Text = "River Speed Graph for Poiseuille Flow",
+            TextSize = 25,
+            Padding = new LiveChartsCore.Drawing.Padding(15),
+            Paint = new SolidColorPaint(SKColors.DarkSlateGray),
+        };
+
+        private double _selectedRiverSpeed;
+
+        public double SelectedRiverSpeed
+        {
+            get => _selectedRiverSpeed;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _selectedRiverSpeed, value);
+               
+            }
+        }
+
+        private double _pressureDiff;   
+        public double PressureDiff
+        {
+            get => _pressureDiff;
+            set => this.RaiseAndSetIfChanged(ref _pressureDiff, value);
+        }
+
+        private double _selectedRiverDepth;
+        public double SelectedRiverDepth
+        {
+            get => _selectedRiverDepth;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _selectedRiverDepth, value);
+            }
+        }
+        public void ChangeRiverDepth()
+        {
+            if (ValueCollection.Count > 0)
+            {
+               ValueCollection.Clear();
+            }
+
+            ValueCollection.Add(0);
+            ValueCollection.AddRange(func.loopVx(SelectedRiverDepth));
+            ValueCollection.Add(0);
         }
     }
 }
