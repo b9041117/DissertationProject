@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevelopmentProject", "Devel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevelopmentProject.Desktop", "..\DevelopmentProject.Desktop\DevelopmentProject.Desktop.csproj", "{60EC75AF-EF44-452A-8E8A-2632243CD9A0}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpLibrary", "..\F#Library\FSharpLibrary.fsproj", "{EA6B03FA-723B-4897-A041-A0C8B7FD9D7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{60EC75AF-EF44-452A-8E8A-2632243CD9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60EC75AF-EF44-452A-8E8A-2632243CD9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60EC75AF-EF44-452A-8E8A-2632243CD9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA6B03FA-723B-4897-A041-A0C8B7FD9D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6B03FA-723B-4897-A041-A0C8B7FD9D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6B03FA-723B-4897-A041-A0C8B7FD9D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6B03FA-723B-4897-A041-A0C8B7FD9D7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

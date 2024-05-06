@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using ScottPlot.Avalonia;
 
 namespace DevelopmentProject.Views;
 
