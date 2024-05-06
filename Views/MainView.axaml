@@ -19,14 +19,14 @@
 
   <Grid>
       <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="5*"/>
           <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
       <Grid.RowDefinitions>
-          <RowDefinition Height="*"/>
+          <RowDefinition Height="6*"/>
           <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
-      <graphsViews:GraphsView DataContext="{Binding graphsViewModel}" Grid.Row="0" Grid.Column="1"></graphsViews:GraphsView>
+      <graphsViews:GraphsView DataContext="{Binding graphsViewModel}" Grid.Row="0" Grid.Column="0"></graphsViews:GraphsView>
 	  <riverView:RiverModelView DataContext="{Binding riverViewModel}" Grid.Row="1" Grid.Column="0"></riverView:RiverModelView>
   </Grid>
 

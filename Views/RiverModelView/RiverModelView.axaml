@@ -5,14 +5,10 @@
              xmlns:vm="clr-namespace:DevelopmentProject.ViewModels.RiverModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DevelopmentProject.Views.RiverModelView.RiverModelView"
-             x:DataType="vm:RiverViewModel"
-             x:CompileBindings="True">
-    <Design.DataContext>
-        <vm:RiverViewModel/>
-    </Design.DataContext>
-    <StackPanel
-        Margin="10">
-		<Slider Value="{Binding SelectedRiverSpeed, Mode=TwoWay}"/>
-        <TextBlock Text="{Binding SelectedRiverSpeed, Mode=OneWay}"/>
-		</StackPanel>
+             x:DataType="vm:RiverViewModel">
+
+	<UserControl.DataContext>
+		<vm:RiverViewModel/>
+	</UserControl.DataContext>
+
 </UserControl>
